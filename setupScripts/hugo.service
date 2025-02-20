@@ -1,0 +1,14 @@
+[Unit]
+Description=Hugo static site generator
+After=network.target
+
+[Service]
+User=yourusername  # Replace with your actual username
+Group=yourgroup     # Replace with your user's group
+WorkingDirectory=/path/to/your/hugo/site # Replace with the absolute path to your Hugo site directory
+ExecStart=/path/to/hugo server --baseUrl="https://yourwebsite.com" --port=1313 # Replace with the actual path to your Hugo executable
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
